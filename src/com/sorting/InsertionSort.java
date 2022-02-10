@@ -16,11 +16,11 @@ public class InsertionSort {
 
     public static void insertionSort(int[] arr) {
         for(int i=1;i<arr.length;i++){
-            for(int j=i-1;j>=0;j--){
-                if(arr[i]<=arr[j])
+            for(int j=i;j>0;j--){
+                if(arr[j-1]>arr[j]){
+                    swap(arr,j-1,j);
+                }else
                     break;
-                else
-                    swap(arr, i, j);
             }
         }
     }
