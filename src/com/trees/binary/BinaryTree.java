@@ -82,7 +82,7 @@ public class BinaryTree {
     }
     /**
      * diameter of a tree is number of nodes present in longest
-     * path between any teo nodes
+     * path between any two nodes
      * */
     public static int diameter(Node node) {
         if(node==null) return 0;

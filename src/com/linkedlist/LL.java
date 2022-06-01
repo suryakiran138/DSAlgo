@@ -103,10 +103,14 @@ public class LL {
         head.next.next = head;
     }
 
-    public void reverseRecursive() {
-        Node origin = head;
-        reverseRecursiveHelper(head);
-        origin.next = null;
+    public Node reverseRecursive(Node head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 
     public static void main(String[] args) {
@@ -118,7 +122,7 @@ public class LL {
         System.out.println("size: "+linkedList.size);
         linkedList.reverseIterative();
         linkedList.printList();
-        linkedList.reverseRecursive();
+        linkedList.head = linkedList.reverseRecursive(linkedList.head);
         linkedList.printList();
     }
 }
